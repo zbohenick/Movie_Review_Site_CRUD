@@ -1,0 +1,42 @@
+@import "bootstrap";
+
+input[type="text"], textarea {
+    width: 100%;
+    max-width: 100%;
+    height: 3em;
+    border: 2px solid grey;
+    padding: 1em;
+    margin: .5em 0 2em 0;
+}
+
+textarea {
+    min-height: 20em;
+}
+
+input[type="number"] {
+    height: 3em;
+    border: 2px solid grey;
+    padding: 1em;
+    margin: .5em 0 2em 0;
+}
+
+a {
+
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+
+
+button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.row {
+    margin-top: 30px;
+}
+h3 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}

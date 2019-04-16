@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-sm">
+  <%= image_tag(@movie.picture_url, width: '70%') if @movie.picture.present? %>
+  </div>
+<div class="col-sm">
+  <div class="row">
+  <p>
+    <strong>Title:</strong>
+    <%= @movie.title %>
+  </p>
+  </div>
+  <div class="row">
+  <p>
+    <strong>Description:</strong>
+    <%= @movie.description %>
+  </p>
+  </div>
+</div>
+</div>
+<div class="row">
+<h3>User Reviews</h3>
+</div>
+<div class=".col-xl">
+<% @reviews.each do |review| %>
+  <div>
+    <p><%= review.review %> ☆'s  <strong> -<%= review.headline %></strong></p>
+    <p><%= simple_format review.body %></p>
+    <%= link_to review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
+    <button type="button" class="btn btn-outline-danger">Delete</button>
+    <%end%>
+    <hr>
+  </div>
+<% end %>
+<h3>New Review</h3>
+
+<%= render partial: 'reviews/form', locals: { review: @review } %>
+</div>
+
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>

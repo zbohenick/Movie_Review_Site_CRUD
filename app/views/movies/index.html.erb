@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Movies</h1>
+ <% @movies.each do |movie| %>
+  <div class="row px-lg-5">
+    <div class="col-sm">
+    <%= link_to movie do %>
+      <%= image_tag movie.picture_url, width: '100%' if movie.picture.present? %>
+    <%end%>
+    </div>
+    <div class="col-sm">
+        <div class="row">
+          <h3><%= movie.title %></h3>
+          </div>
+          <div class="row">
+          <%= movie.description %>
+          </div>
+          <div class="row">
+        <%= link_to movie do %>
+
+<button type="button" class="btn btn-outline-primary">Review Movie</button>
+
+<%end%>
+     </div>
+    </div>
+  </div>
+          <%= link_to edit_movie_path(movie) do %>
+
+          <button type="button" class="btn btn-outline-secondary">Edit</button>
+
+          <%end%>
+<%= link_to movie, method: :delete, data: { confirm: 'Are you sure?' } do %>
+    <button type="button" class="btn btn-outline-danger">Delete</button>
+    <%end%>
+<% end %>
+
+<br>
+<%= link_to new_movie_path do %>
+
+<button type="button" class="btn btn-outline-info">New Movie</button>
+
+<%end%>
+
