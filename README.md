@@ -5,9 +5,9 @@ By: **Zach Bohenick**
 *To begin, I used the Rails Girls Guides: Rails Girls App Tutorial*
 https://guides.railsgirls.com/app
 
-### Tier 1
+## Tier 1
 
-#### 1, 2. Objects
+### 1, 2. Objects
 
 I created a movie object with three variables.
 
@@ -18,7 +18,7 @@ rake db:migrate
 ```
 
 
-#### 1, 2a. Picture Uploads
+### 1, 2a. Picture Uploads
 
 In order to add movie posters to my site, I followed the Rails Girls Guide to set up the gem carrierwave.
 ```
@@ -42,7 +42,7 @@ And included an if statment to check if a picture is present
 <%= image_tag movie.picture_url, width: '100%' if movie.picture.present? %>
 ```
 
-#### 1, 2b. Adding Reviews
+### 1, 2b. Adding Reviews
 *Rails Girls Guides: Commenting for Rails Girls App*
 https://guides.railsgirls.com/commenting
 *FormTagHelper Methods Options*
@@ -54,7 +54,7 @@ Created review object scaffold
 rails g scaffold review review:integer headline:string body:text movie_id:integer
 rake db:migrate
 ```
-#### 1, 2c. Including Reviews on Movie Show Page
+### 1, 2c. Including Reviews on Movie Show Page
 
 Added
 
@@ -70,7 +70,7 @@ Added
 <%= render partial: 'reviews/form', locals: { review: @review } %>
 ```
 
-#### 1, 2d. Setting Min Max on Review Input
+### 1, 2d. Setting Min Max on Review Input
 
 Added `:min` and `:max` options to number_field to make reviews out of 10.
 
@@ -83,7 +83,7 @@ Added `:min` and `:max` options to number_field to make reviews out of 10.
 I also changed the form labels to be more descriptive.
 
 
-#### 3. Adding Relations to Models
+### 3. Adding Relations to Models
 
 In `movie.rb` model file
 ```
@@ -93,13 +93,13 @@ In `review.rb` model file
 ```
 belongs_to :movie
 ```
-#### 4. The scaffold established CRUD abilities for each object.
+### 4. The scaffold established CRUD abilities for each object.
 
-#### 5. I posted this onto Github.
+### 5. I posted this onto Github.
 
-### Tier 2
+## Tier 2
 
-#### 1. Setting Home Page
+### 1. Setting Home Page
 
 I wanted to change the route of the home page to go to the movies index page. In order to do this, I added this to the `routes.rb` file
 
@@ -108,7 +108,7 @@ root to: redirect('/movies')
 ```
 
 
-#### 2. Including Bootsrap
+### 2. Including Bootsrap
 *Let's Code - How to setup Bootstrap 4 on Ruby on Rails 5*
 https://www.youtube.com/watch?v=ZPh19YUbC3A
 
@@ -120,7 +120,7 @@ https://www.youtube.com/watch?v=ZPh19YUbC3A
 
 4. I added columns and rows to the `show.html.erb` and `index.html.erb` files.
 
-#### 3. Adding Validations
+### 3. Adding Validations
 
 I added some validations to my `movie.rb` and `review.rb` files.
 
@@ -137,7 +137,7 @@ I added some validations to my `movie.rb` and `review.rb` files.
 
 I wrote these validations to make sure that the application warns the user if they try to submit a movie or review without the necessary information.
 
-#### 4. Writitng Tests
+### 4. Writitng Tests
 
 I am still rather shaky on writing tests, but I did my best to move forward with what I understand: testing validations.
 
@@ -167,15 +167,15 @@ class ReviewTest < ActiveSupport::TestCase
   end
 end
 ```
-#### 5. ReadMe: Here.
+### 5. ReadMe: Here.
 
-### Tier 3
+## Tier 3
 
-#### 2. Add gem with added functionality
+### 2. Add gem with added functionality
 
 I added `gem 'carrierwave'` to my site as mentioned before.
 
-#### 4. Clever design of HTML/CSS
+### 4. Clever design of HTML/CSS
 
 I also did some form styling so that it is more comfortable to write reviews or movie descriptions. I increased the size and improved the appearance by adding this to the `application.scss` file: 
 
